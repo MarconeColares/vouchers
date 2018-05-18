@@ -1,0 +1,45 @@
+<div class="p-3 mb-2 bg-dark text-white"></div>
+
+<div class="border-bottom mt-5">
+  <h1 class="text-center">Vouchers</h1>
+</div>
+
+<div class="container mt-5">
+  <input type="text" placeholder="Filters Result" class="form-control">
+
+  <table class="table table-striped mt-5">
+    <tr>
+      <th>Codigo</th>
+      <th>Campanha</th>
+      <th>Inicio</th>
+      <th>Fim</th>
+      <th>Max</th>
+      <th>Qtd. Utilizada</th>
+      <th>Valor</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let voucher of vouchers">
+      <td class="align-middle">{{ voucher.codigo }}</td>
+      <td class="align-middle">{{ voucher.campanha }}</td>
+      <td class="align-middle">{{ voucher.inicio }}</td>
+      <td class="align-middle">{{ voucher.fim }}</td>
+      <td class="align-middle">{{ voucher.max }}</td>
+      <td class="align-middle">{{ voucher.qtdUtilizada }}</td>
+      <td class="align-middle">{{ voucher.valor }}</td>
+      <td>
+        <p>
+          <button class="btn btn-sm btn-primary" (click)="editar()" >
+            Editar
+          </button>
+        </p>
+        <p>
+          <button class="btn btn-sm btn-danger" (click)="excluir()">
+            Excluir
+          </button>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
